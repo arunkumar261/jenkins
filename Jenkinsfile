@@ -51,11 +51,6 @@ pipeline {
               echo "Hello this is SAT Stage"
             }
         }
-        stage('PRE-SAT') {
-            steps {
-              echo "Hello this is PRE-SAT Stage"
-            }
-        }
          stage('PRE-PROD') {
             steps {
               echo "Hello this is PRE-PROD Stage"
