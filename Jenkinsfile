@@ -11,6 +11,11 @@ pipeline {
       qa = "QA"
       prod = "PROD"
     }
+
+    options{
+        timeout(time:1, unit:'Hours')
+    }
+
     stages {
         stage('DEV') {
             steps {
