@@ -6,16 +6,21 @@ pipeline {
         label 'AGENT-1'
       }
     }
+    environment{
+      dev = "DEV"
+      qa = "QA"
+      prod = "PROD"
+    }
     stages {
         stage('DEV') {
             steps {
-              echo "Hello this is DEV Stage"
+              echo "Hello this is ${dev} Stage"
             }
         }
         
          stage('QA-testing') {
             steps {
-              echo "Hello this is QA-testing Stage"
+              echo "Hello this is ${qa}-testing Stage"
             }
         }
         stage('UAT') {
@@ -35,7 +40,7 @@ pipeline {
         }
          stage('PROD') {
             steps {
-              echo "Hello this is PROD Stage"
+              echo "Hello this is ${prod} Stage"
             }
         }
     }
