@@ -7,9 +7,19 @@ pipeline {
             }
         }
         
-         stage('QA') {
+         stage('QA-testing') {
             steps {
-              echo "Hello this is QA Stage"
+              echo "Hello this is QA-testing Stage"
+            }
+        }
+        stage('UAT') {
+            steps {
+              echo "Hello this is UAT Stage"
+            }
+        }
+        stage('SAT') {
+            steps {
+              echo "Hello this is SAT Stage"
             }
         }
          stage('PRE-PROD') {
