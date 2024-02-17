@@ -19,11 +19,11 @@ pipeline {
  
      parameters{
         string(name: 'PERSON' defaultValue:'MR.Jenkins', description: 'say hello to this person')
-        text(name: 'BIOGRAPHY' defaultValue: '', description: 'Enter info abt the person')
+        // text(name: 'BIOGRAPHY' defaultValue: '', description: 'Enter info abt the person')
         // booleanParam(name: 'TOGGLE' defaultValue: true, description:'toggle this value')
         // string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
 
-        // text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter some information about the person')
+        text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter some information about the person')
 
         booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
 
