@@ -41,7 +41,7 @@ pipeline {
          stage('PROD') {
             steps {
               echo "Hello this is ${prod} Stage"
-              env.prod
+              prod
             }
         }
     }
