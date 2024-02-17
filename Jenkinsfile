@@ -17,6 +17,14 @@ pipeline {
         disableConcurrentBuilds()
     }
 
+     parameters{
+        string(name: 'PERSON' defaultValue:'MR.Jenkins', description:'say hello to this person')
+        text(name: 'BIOGRAPHY' defaultValue:'', description:'Enter info abt the person')
+        booleanParam(name: 'TOGGLE' defaultValue: true, description:'toggle this value')
+        choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
+        password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
+    }
+
     stages {
         stage('DEV') {
             steps {
@@ -47,6 +55,21 @@ pipeline {
          stage('PROD') {
             steps {
               echo "Hello this is ${prod} Stage"
+            }
+        }
+        stage('check params'){
+            steps{
+                sh """
+                    echo "Hello ${params.PERSON}"
+
+                    echo "Biography: ${params.BIOGRAPHY}"
+
+                    echo "Toggle: ${params.TOGGLE}"
+
+                    echo "Choice: ${params.CHOICE}"
+
+                    echo "Password: ${params.PASSWORD}"
+                """
             }
         }
     }
