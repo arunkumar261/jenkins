@@ -1,5 +1,11 @@
 pipeline {
-    agent any
+    //agent any                     // -------------> default agent
+//agent which is created by us here we r declaring
+    agent {
+      node{
+        label 'AGENT-1'
+      }
+    }
     stages {
         stage('DEV') {
             steps {
